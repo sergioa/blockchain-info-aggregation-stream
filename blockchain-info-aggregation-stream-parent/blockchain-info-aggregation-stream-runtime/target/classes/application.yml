@@ -1,5 +1,0 @@
-blockchain-info:
-  url: "wss://ws.blockchain.info/inv"
-
-time-series:
-  rate: 60000
