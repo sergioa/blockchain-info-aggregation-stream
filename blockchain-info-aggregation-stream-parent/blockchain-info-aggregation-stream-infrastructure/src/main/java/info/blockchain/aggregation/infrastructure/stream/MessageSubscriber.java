@@ -4,5 +4,5 @@ import org.reactivestreams.Publisher;
 
 @FunctionalInterface
 public interface MessageSubscriber<T> {
-    Publisher<T> subscribe();
+    Publisher<T> publisher();
 }

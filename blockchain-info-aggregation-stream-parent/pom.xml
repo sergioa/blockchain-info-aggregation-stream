@@ -20,16 +20,17 @@
 
     <modules>
         <module>blockchain-info-aggregation-stream-runtime</module>
-        <module>blockchain-info-aggregation-stream-controller</module>
+        <module>blockchain-info-aggregation-stream-adapter</module>
         <module>blockchain-info-aggregation-stream-domain</module>
         <module>blockchain-info-aggregation-stream-infrastructure</module>
+        <module>blockchain-info-aggregation-stream-client-example</module>
     </modules>
 
     <dependencies>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <scope>provided</scope>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 
@@ -75,6 +76,18 @@
                 <artifactId>reactor-test</artifactId>
                 <version>3.2.9.RELEASE</version>
             </dependency>
+
+            <dependency>
+                <groupId>org.awaitility</groupId>
+                <artifactId>awaitility</artifactId>
+                <version>3.1.6</version>
+            </dependency>
+
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>4.12</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -84,6 +97,37 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>${springboot-version}</version>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>build-helper-maven-plugin</artifactId>
+                <version>1.5</version>
+                <executions>
+                    <execution>
+                        <id>add-test-source</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>add-test-source</goal>
+                        </goals>
+                        <configuration>
+                            <sources>
+                                <source>src/it/java</source>
+                            </sources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <artifactId>maven-failsafe-plugin</artifactId>
+                <version>2.22.2</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>integration-test</goal>
+                            <goal>verify</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>

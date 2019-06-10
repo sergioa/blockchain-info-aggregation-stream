@@ -1,8 +1,8 @@
 package info.blockchain.aggregation.domain;
 
-import lombok.AllArgsConstructor;
+import lombok.Builder;
 
-@AllArgsConstructor
+@Builder
 public class Aggregate {
 
     public final int count;

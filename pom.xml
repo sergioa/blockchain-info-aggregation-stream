@@ -34,7 +34,7 @@
 
 			<dependency>
 				<groupId>com.blockchain.info</groupId>
-				<artifactId>blockchain-info-aggregation-stream-controller</artifactId>
+				<artifactId>blockchain-info-aggregation-stream-adapter</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 

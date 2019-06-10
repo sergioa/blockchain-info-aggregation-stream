@@ -9,45 +9,12 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>blockchain-info-aggregation-stream-runtime</artifactId>
+    <artifactId>blockchain-info-aggregation-stream-client</artifactId>
 
     <dependencies>
         <dependency>
-            <groupId>com.blockchain.info</groupId>
-            <artifactId>blockchain-info-aggregation-stream-adapter</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>com.blockchain.info</groupId>
-            <artifactId>blockchain-info-aggregation-stream-domain</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>com.blockchain.info</groupId>
-            <artifactId>blockchain-info-aggregation-stream-repository</artifactId>
-        </dependency>
-
-        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-webflux</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.awaitility</groupId>
-            <artifactId>awaitility</artifactId>
-            <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>io.projectreactor</groupId>
-            <artifactId>reactor-test</artifactId>
-            <scope>test</scope>
         </dependency>
     </dependencies>
 
@@ -63,12 +30,13 @@
                         </goals>
                         <configuration>
                             <classifier>spring-boot</classifier>
-                            <mainClass>info.blockchain.aggregation.runtime.Application</mainClass>
+                            <mainClass>info.blockchain.aggregation.client.Application</mainClass>
                         </configuration>
                     </execution>
                 </executions>
             </plugin>
         </plugins>
     </build>
+
 
 </project>
