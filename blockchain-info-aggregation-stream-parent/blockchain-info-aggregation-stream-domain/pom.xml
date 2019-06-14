@@ -11,11 +11,20 @@
 
     <artifactId>blockchain-info-aggregation-stream-domain</artifactId>
 
+    <properties>
+        <jackson.version>[2.9.9,)</jackson.version>
+    </properties>
+
     <dependencies>
+        <dependency>
+            <groupId>com.fasterxml.jackson.module</groupId>
+            <artifactId>jackson-module-kotlin</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
-            <version>[2.9.9,)</version>
+            <version>${jackson.version}</version>
         </dependency>
     </dependencies>
 

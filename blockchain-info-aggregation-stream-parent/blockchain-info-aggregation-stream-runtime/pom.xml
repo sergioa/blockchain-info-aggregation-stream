@@ -9,6 +9,11 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
+    <properties>
+        <dockerfile-maven-version>1.4.10</dockerfile-maven-version>
+    </properties>
+
+
     <artifactId>blockchain-info-aggregation-stream-runtime</artifactId>
 
     <dependencies>
@@ -53,6 +58,26 @@
 
     <build>
         <plugins>
+            <plugin>
+                <groupId>com.spotify</groupId>
+                <artifactId>dockerfile-maven-plugin</artifactId>
+                <version>${dockerfile-maven-version}</version>
+                <executions>
+                    <execution>
+                        <id>default</id>
+                        <goals>
+                            <goal>build</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <tag>${project.version}</tag>
+                    <repository>blockchain-info-stream-server</repository>
+                    <buildArgs>
+                        <JAR_FILE>${project.build.finalName}-spring-boot.jar</JAR_FILE>
+                    </buildArgs>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
