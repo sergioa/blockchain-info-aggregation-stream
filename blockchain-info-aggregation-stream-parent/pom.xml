@@ -11,7 +11,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <properties>
-        <springboot-version>2.1.5.RELEASE</springboot-version>
+        <springboot-version>2.5.12</springboot-version>
         <spring-version>5.1.7.RELEASE</spring-version>
     </properties>
 
